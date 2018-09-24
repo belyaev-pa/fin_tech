@@ -1,5 +1,4 @@
-from django.shortcuts import render, render_to_response
-from django.template import RequestContext
+from django.shortcuts import render_to_response
 from rest_framework import generics
 from todo_list.serializers import TaskSerializer
 from todo_list.models import Task
@@ -20,4 +19,4 @@ class TaskListDetailView(generics.RetrieveUpdateDestroyAPIView):
 
 def index(request):
     context = {}
-    return render('todo_list/index.html', context)
+    return render_to_response('todo_list/index.html', context)
